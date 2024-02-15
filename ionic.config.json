@@ -1,0 +1,7 @@
+{
+  "name": "FitCalendar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
