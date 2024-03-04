@@ -1,0 +1,44 @@
+.inputs{
+  margin-top: 12%;
+  margin-bottom: 2%;
+}
+.inputResultado{
+  font-size: 20px;
+}
+
+.itemResultado{
+  --background: rgba(112,112,112,0.4);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: sp;
+  margin-right: 1%;
+  margin-left: 8%;
+  border-radius: 1%;
+}
+
+.iIcon{
+  margin-left: 5%;
+}
+
+.btnCalcular{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.iAyuda{
+  margin-left: 2%;
+}
+
+.custom-tooltip {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+

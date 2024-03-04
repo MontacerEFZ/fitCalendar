@@ -1,0 +1,23 @@
+.tabla-ejercicios {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-ejercicios th, .tabla-ejercicios td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabla-ejercicios th {
+  background-color: #f2f2f2;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+

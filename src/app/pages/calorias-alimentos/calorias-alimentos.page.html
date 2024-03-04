@@ -1,0 +1,50 @@
+<app-header titulo="Información Nutricional"></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="inputs">
+    <ion-item>
+      <ion-input placeholder="comida en inglés" [(ngModel)]="food" (input)="validarCampos()"></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="fabbtn">
+    <div class="parrafo">
+      <ion-button (click)="verTabla()"  [disabled]="!botonHabilitado">Ver/Actualizar Tabla</ion-button>
+    </div>
+    <ion-icon name="information-circle-outline" (click)="toggleTooltip()"></ion-icon>
+    <div *ngIf="showTooltip" class="custom-tooltip">
+      La información  nutricional es de una porción de 100g.
+    </div>
+
+    <div class="parrafo">
+      <ion-button (click)="verGrafica()"  [disabled]="!btnVerGrafica">Ver/Actualizar Gráfica</ion-button>
+    </div>
+    </div>
+
+  <div id="chart_div"  style="display: flex; justify-content: center; margin-bottom: 10%">
+  </div>
+
+  <div *ngIf="macros">
+    <table class="tabla-macros">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Grasas</th>
+        <th>Carbohidratos</th>
+        <th>Proteínas</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let macro of macros">
+        <tr>
+          <td>{{ macro.name }}</td>
+          <td >{{ macro.fat_total_g}}g</td>
+          <td>{{ macro.carbohydrates_total_g}}g, de los cuales azucares {{macro.sugar_g}}g</td>
+          <td>{{ macro.protein_g}}g</td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

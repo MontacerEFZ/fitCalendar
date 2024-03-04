@@ -1,0 +1,33 @@
+<app-header titulo="Registro Agua"></app-header>
+
+<ion-content [fullscreen]="true"  class="ion-padding">
+  <div class="fabbtn">
+    <div class="parrafo">
+      <div class="botella">
+        <img *ngIf="cantidad ===0" src="assets/botella0.jpg">
+        <img *ngIf="cantidad ===0.5" src="assets/botella1.jpg">
+        <img *ngIf="cantidad ===1" src="assets/botella2.jpg">
+        <img *ngIf="cantidad ===1.5" src="assets/botella3.jpg">
+        <img *ngIf="cantidad ===2" src="assets/botella4.jpg">
+        <img *ngIf="cantidad ===2.5" src="assets/botella5.jpg">
+        <img *ngIf="cantidad ===3" src="assets/botella6.jpg">
+        <img *ngIf="cantidad ===3.5" src="assets/botella7.jpg">
+        <img *ngIf="cantidad ===4" src="assets/botella8.jpg">
+        <img *ngIf="cantidad >=4.5" src="assets/botella9.jpg">
+      </div>
+      <ion-fab-button (click)="mas()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <div><p>{{ cantidad }} litro(s) bebido(s)</p></div>
+    </div>
+  </div>
+  <ion-icon class="iicon" name="information-circle-outline" (click)="toggleTooltip()"></ion-icon>
+  <div *ngIf="showTooltip" class="custom-tooltip">
+   La cantidad se mide en porciones de 0.5L.
+  </div>
+  <div class="btn">
+    <ion-button (click)="reset()">RESET</ion-button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<app-header titulo="Calorias Quemadas"></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="inputs">
+    <ion-item>
+      <ion-input placeholder="deporte en inglés" [(ngModel)]="sport" (input)="validarCampos()"></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="parrafo">
+    <ion-button (click)="verTabla()"  [disabled]="!botonHabilitado" style="display: flex; justify-content: center; margin-bottom: 10%; margin-top: 3%; margin-left: 2%">Ver/Actualizar Tabla</ion-button>
+  </div>
+
+  <div *ngIf="ejercicios">
+    <table class="tabla-ejercs">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Calorias quemadas por hora</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let ejerc of ejercicios">
+        <tr>
+          <td>{{ ejerc.name }}</td>
+          <td >{{ ejerc.calories_per_hour }}Kcals</td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

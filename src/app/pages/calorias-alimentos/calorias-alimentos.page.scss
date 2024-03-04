@@ -1,0 +1,35 @@
+.inputs{
+  margin-bottom: 2%;
+}
+
+.fabbtn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10%;
+}
+
+.parrafo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left:3%;
+}
+
+.tabla-macros {
+  margin-top: 3%;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-macros th, .tabla-macros td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabla-macros th {
+  background-color: #f2f2f2;
+}

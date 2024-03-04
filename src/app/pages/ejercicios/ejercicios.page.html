@@ -1,0 +1,72 @@
+<app-header titulo="Guía Ejercicios"></app-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="ion-padding"><p><strong>Elige un músculo para ver ejercicios para trabajarlo:</strong></p></div>
+  <ion-radio-group [(ngModel)]="selectedOption" (ionChange)="validarCampos()">
+    <ion-item>
+      <ion-radio value="abdominals"><strong>Abdominales</strong>  </ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="biceps"><strong>Bíceps</strong>  </ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="triceps"><strong>Tríceps</strong>  </ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="glutes"><strong>Glúteos</strong>  </ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="quadriceps"><strong>Cuádriceps</strong>  </ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="lats"><strong>Espalda</strong>  </ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="chest"><strong>Pecho</strong>  </ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <div class="btn">
+    <ion-button (click)="ver()" [disabled]="!botonHabilitado">Ver</ion-button>
+  </div>
+
+  <div *ngIf="ejercicio">
+    <table class="tabla-ejercicios">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+
+        <th>Instrucciones</th>
+        <th>URL Youtube</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let exercise of ejercicio">
+        <tr>
+          <td>{{ exercise.name }}</td>
+          <td>
+            <div *ngIf="!exercise.showFullInstructions">
+              {{ exercise.instructions | slice:0:100 }} <!-- Muestra solo los primeros 100 caracteres -->
+              <span *ngIf="exercise.instructions.length > 100">...</span> <!-- Agrega puntos suspensivos si hay más texto -->
+              <a (click)="toggleInstructions(exercise)">Ver más</a> <!-- Botón para ver más -->
+            </div>
+            <div *ngIf="exercise.showFullInstructions">
+              {{ exercise.instructions }}
+              <a (click)="toggleInstructions(exercise)">Ver menos</a> <!-- Botón para ver menos -->
+            </div>
+          </td>
+          <td>
+            <a [href]="generateYoutubeLink(exercise.name)" target="_blank">Ver en YouTube</a>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+    </table>
+  </div>
+</ion-content>

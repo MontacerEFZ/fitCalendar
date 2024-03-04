@@ -1,0 +1,46 @@
+.fabbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10%;
+}
+
+.parrafo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left:5%;
+  margin-top: 5%;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  margin-right: 7%;
+  margin-bottom: 2%;
+  margin-top: 8%;
+}
+
+app-header{
+  margin-bottom: 10%;
+}
+
+.custom-tooltip {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+img{
+  width: 250px;
+  height: 500px;
+}
+
+.iicon{
+  margin-left: 45%;
+}
+

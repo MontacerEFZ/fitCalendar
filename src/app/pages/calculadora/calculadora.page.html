@@ -1,0 +1,56 @@
+<app-header titulo="Calculadora Calorías"></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-icon class="iIcon" name="information-circle-outline" (click)="toggleTooltip()"></ion-icon>
+  <div *ngIf="showTooltip" class="custom-tooltip">
+    Rellenar todo para poder calcular.
+  </div>
+
+  <div class="inputs">
+  <ion-item>
+    <ion-input placeholder="peso (kg)" type="number" [(ngModel)]="kg" (input)="validarCampos()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="altura (cm)" type="number" [(ngModel)]="cm" (input)="validarCampos()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="edad (años)" type="number" [(ngModel)]="edad" (input)="validarCampos()"></ion-input>
+  </ion-item>
+  </div>
+  <div class="ion-padding"><p><strong>Elige la cantidad de actividad física que haces a la semana:</strong></p></div>
+  <ion-radio-group [(ngModel)]="selectedOption" (ionChange)="validarCampos()">
+    <ion-item>
+      <ion-radio value="1.2"><strong>Sedentario</strong> (0 ejercicio) </ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="1.375"><strong>Levemente Activo</strong> (1-3 días)</ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="1.55"><strong>Moderadamente Activo</strong> (3-5 días)</ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="1.725"><strong>Muy Activo</strong> (6-7 días)</ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio value="1.9"><strong>ExtremadamenteActivo</strong> (+7 días) </ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+<div class="btnCalcular">
+  <ion-button (click)="calcularChico()" [disabled]="!botonHabilitado">Calcular para CHICO</ion-button>
+  <ion-button (click)="calcularChica()" [disabled]="!botonHabilitado">Calcular para CHICA</ion-button>
+  </div>
+
+  <ion-item class="itemResultado">
+    <ion-input class="inputResultado" placeholder="Calorías" type="text" [(ngModel)]="resultado" readonly="true"></ion-input>
+  </ion-item>
+  <ion-item class="itemResultado">
+    <ion-input class="inputResultado" placeholder="Macronutrientes" type="text" [(ngModel)]="macros" readonly="true"></ion-input>
+  </ion-item>
+
+</ion-content>
+

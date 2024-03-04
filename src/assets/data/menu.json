@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Gráfica cumplimiento",
+    "ruta": "/add",
+    "icono": "bar-chart"
+  },
+  {
+    "nombre": "Calculadora Calorías",
+    "ruta": "/calculadora",
+    "icono": "calculator"
+  },
+  {
+  "nombre": "Registro agua",
+  "ruta": "/agua",
+  "icono": "water"
+},
+  {
+  "nombre": "Guía Ejercicios",
+  "ruta": "/ejercicios",
+  "icono": "barbell"
+},
+  {
+  "nombre": "Información Nutricional",
+  "ruta": "/calorias-alimentos",
+  "icono": "information-circle"
+},
+  {
+  "nombre": "Calorías Quemadas",
+  "ruta": "/calorias-quemadas",
+  "icono": "flame"
+}
+  ]
