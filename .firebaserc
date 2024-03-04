@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fitcalendar-829d7": {
+      "hosting": {
+        "app": [
+          "fitcalendar-829d7"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fitcalendar-829d7"
+  }
+}
